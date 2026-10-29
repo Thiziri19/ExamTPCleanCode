@@ -6,6 +6,8 @@ export interface Card {
   value: CardValue;
   taught: Taught;
 }
+
+export type Hand = Card[]
 /*
 
 
@@ -20,9 +22,19 @@ const nomsValeurs: Record<ValeurCarte, string> = {
   11: "Valet", 12: "Dame", 13: "Roi", 14: "As"
 };
 */
-export function combineCards(hand: Card[][]){
+export function combineCards(hand: Hand[]){
     let result = 0;
     if(hand.length == 0 ){
         return result;
     }
+    //passer sur les listes 
+       for(let i=0;i< hand.length;i++){
+        for(let j=0;j< hand[i]?.length!;j++){
+            if(hand[j]?.length! != 5 ){
+                result = -1;
+            }
+        }
+            
+    }
+    return result
 }
