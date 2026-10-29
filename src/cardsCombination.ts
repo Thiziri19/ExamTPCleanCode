@@ -16,11 +16,6 @@ const myCard: Card = {
   enseigne: 'coeur'  // 
 };
 
-// 
-const nomsValeurs: Record<ValeurCarte, string> = {
-  2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9", 10: "10",
-  11: "Valet", 12: "Dame", 13: "Roi", 14: "As"
-};
 */
 export function combineCards(hand: Hand[]){
     let result = 0;
@@ -32,9 +27,47 @@ export function combineCards(hand: Hand[]){
         for(let j=0;j< hand[i]?.length!;j++){
             if(hand[j]?.length! != 5 ){
                 result = -1;
+                return result;
             }
         }
             
     }
+    
+
     return result
+}
+
+export function color(card: Card[]){
+
+    let colorCards = 0;
+    let sameColor=true;
+    let firstColor = card[0]?.taught
+        if(
+            firstColor != card[1]?.taught
+        ){
+            return false
+        }
+    
+    
+
+}
+
+export function carre(card: Card[]){
+
+    let nbr = 0;
+    let firstVal = card[0]?.value
+    let result = true;
+    for(let j=1;j<= card.length;j++){
+
+            if( card[j]?.value != firstVal){
+                nbr++;
+            }
+        }
+
+        if(nbr == 2){
+            result = false
+        }
+        return false;
+    
+
 }
